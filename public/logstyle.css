@@ -1,0 +1,131 @@
+body{
+    margin: 0;
+    width: 100%;    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom right,rgb(119, 119, 119),rgba(72, 74, 72,0));
+    background-repeat: no-repeat;
+}
+.acc{
+    position: absolute;
+    top: 12px;
+    right: 20px;
+}
+.login{
+    position: absolute;
+    top: 34px;
+    margin-left: 40%;
+    font-family: san-serif;
+    font-weight: 700;
+}
+.box1{
+    position: absolute;
+    top: 21%;
+    left: 40%;
+    width: 290px;
+    height: 360px;
+    border-radius: 10px;
+    background-color: rgb(174, 181, 176);
+    animation: cot 1s ease;
+    z-index: 1;
+}
+.box2{
+    position: absolute;
+    top: 21%;
+    left: 40%;
+    width: 290px;
+    height: 360px;
+    rotate: 40deg;
+    border-radius: 10px;
+    background-color: rgb(139, 176, 211);
+    animation: bot 1s ease;
+}
+.box3{
+    position: absolute;
+    top: 21%;
+    left: 40%;
+    width: 290px;
+    height: 360px;
+    rotate: -20deg;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    animation: rot 1s ease;
+}
+.box4{
+    position: absolute;
+    top: 21%;
+    left: 40%;
+    width: 290px;
+    height: 360px;
+    rotate: 20deg;
+    border-radius: 10px;
+    background-color: rgb(92, 64, 64);
+    animation: aot 1s ease;
+}
+@keyframes aot {
+    0%{
+        transform: translateY(200px) translateY(200px) rotate(90deg);
+    }
+    
+}
+@keyframes rot {
+    0%{
+        transform: translateX(200px) translateX(200px) rotate(90deg);
+    }
+    
+}
+@keyframes bot {
+    0%{
+        transform: translateX(-200px)  translateX(-200px) rotate(90deg);
+    }
+    
+}
+@keyframes cot {
+    0%{
+        transform: translateY(-200px) translateY(-200px)rotate(90deg);
+    }
+    
+}
+.form{
+    padding: 15%;
+    margin-top: 50px;
+    font-family: sans-serif;
+}
+.sp{
+    font-size: 12px;
+    position: absolute;
+    top:55%;
+    right: 10%;
+    font-family: sans-serif ;
+    cursor: pointer;
+}
+.button{
+    position: absolute;
+    top: 85%;
+    right: 15px;
+    border: none;
+    padding: 8px;
+    background-color:transparent ;
+    cursor: pointer;
+    font-size:large;
+}
+
+input{
+    margin-top: 10px;
+}
+.form label{
+    margin-top: 10px;
+    padding-top: 3px;
+}
+#username ,#password{
+    background: transparent;
+    padding: 10px;
+    font-size: 14px;
+    font-weight:700;
+    font-family: sans-serif;
+    border: none;
+    border-bottom: 1px solid #5e4d4d;
+    outline: none;
+}

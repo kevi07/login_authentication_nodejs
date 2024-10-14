@@ -1,0 +1,68 @@
+<html lang="en">
+
+<%- include('./partials/header') %>
+
+
+<body>
+    <div class="newbox">
+        <div class="boxnew">
+            <span class="register">REGISTER</span>
+            <form class="form1">
+                <!-- <input type="text" id="mail1" placeholder="E-mail">
+                <input type="password" id="password1" placeholder="password"> -->
+                <input type="text" name="email"  id="username" placeholder="username" required />
+                <div class="emailerr"></div><br>
+                <label for="password"></label>
+                <input type="password" name="password" id="password" placeholder="password" required />
+                <div class="passworderr"></div>
+                
+                <button class="button1">Sign-up</button>
+            </form>
+        </div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+    </div>
+
+    <script>
+        const form = document.querySelector('form');
+        const emailError = document.querySelector('.emailerr');
+        const passwordError = document.querySelector('.passworderr');
+
+        form.addEventListener('submit' , async (e) => {
+            e.preventDefault();
+
+            emailError.textContent = '';
+            passwordError.textContent = '';
+
+
+            //get the values of the element
+            const email = form.email.value;
+            const password = form.password.value;
+            
+            try{
+                const res = await fetch('/signup',{
+                    method :'POST',
+                    body : JSON.stringify({ email , password }),
+                    headers : { 'content-Type' : 'application/json'}
+                });
+
+                const data = await res.json();
+                console.log(data);
+                if(data.errors){
+                    emailError.textContent = data.errors.email;
+                    passwordError.textContent = data.errors.password;
+                    console.log("data error part");
+                }
+                if(data.user){
+                    location.assign('/');
+                }
+            }
+            catch(err){
+                console.log(err);
+            }
+            
+        })
+    </script>
+</body>
+</html>
